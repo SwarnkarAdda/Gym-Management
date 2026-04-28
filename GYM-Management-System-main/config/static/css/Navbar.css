@@ -1,0 +1,36 @@
+/* Navbar Container */
+.navbar {
+  background-color: #222;
+  padding: 15px 0px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* UL Flexbox */
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+/* LI spacing */
+.nav-item {
+  margin-left: 30px;
+}
+
+/* Link styling */
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.nav-link:hover {
+  color: #ff4c4c;
+}
+
+

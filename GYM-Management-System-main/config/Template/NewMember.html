@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/NewMember.css' %}" />
+  </head>
+  <body>
+    {% include 'Navbar.html' %}
+    <div class="NewMember-wrapper">
+      <div class="NewMember-formContainer">
+        <h2>New Member</h2>
+        <form
+          action="{% url 'newMember' %}"
+          method="POST"
+          class="NewMember-form"
+        >
+          {% csrf_token %}
+          <input type="text" name="name" placeholder="Full Name" required />
+          <input type="number" name="age" placeholder="Age" required />
+          <select name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+          <input
+            type="text"
+            name="email"
+            placeholder="Email Address"
+            required
+          />
+          <input
+            type="tel"
+            name="phone"
+            maxlength="10"
+            pattern="[0-9]{10}"
+            placeholder="Phone (10 digits)"
+            required
+          />
+          <input type="text" name="address" placeholder="Address" required />
+          <h5>Joining Date</h5>
+          <input
+            type="date"
+            name="joiningDate"
+            placeholder="Joining Date"
+            required
+          />
+          <h5>Expireing Date</h5>
+          <input
+            type="date"
+            name="expireingDate"
+            placeholder="Expireing Date"
+            required
+          />
+          <select name="workoutTime" required>
+            <option value="">Preferred Workout Time</option>
+            <option value="Morning">Morning</option>
+            <option value="Evening">Evening</option>
+            <option value="Any">Any</option>
+          </select>
+          <select name="plan" required>
+            <option value="">Selected Plan</option>
+            <option value="1 Month">1 Month</option>
+            <option value="3 Months">3 Months</option>
+            <option value="6 Months">6 Months</option>
+            <option value="1 Year">1 Year</option>
+          </select>
+          <button type="submit">Saved Details</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

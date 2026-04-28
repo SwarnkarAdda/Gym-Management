@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/SearchTrainer.css' %}" />
+  </head>
+  <body>
+    {% include 'Navbar.html' %}
+    <div class="SearchTrainer-wrapper">
+      <h1>Search Result</h1>
+      {% if trainers %} {% for trainer in trainers %}
+      <div class="SearchTrainer-memberDetails">
+        <p>Trainer ID: {{ trainer.id }}</p>
+        <p>Name : {{ trainer.name }}</p>
+        <p>Age : {{ trainer.age }}</p>
+        <p>Gender : {{ trainer.gender }}</p>
+        <p>Email : {{ trainer.email }}</p>
+        <p>Phone : {{ trainer.phone }}</p>
+        <p>Address : {{ trainer.address }}</p>
+        <p>Experience : {{ trainer.experience }}</p>
+        <p>Specialty : {{ trainer.specialty }}</p>
+        <p>JoiningDate : {{ trainer.joiningDate }}</p>
+        <p>Salary : {{ trainer.salary }}</p>
+        <p>Shift : {{ trainer.shift }}</p>
+        <a
+          href="{% url 'deleteTrainer' trainer.id %}"
+          class="SearchTrainer-delete-button"
+          >Delete</a
+        >
+        <a
+          href="{% url 'updateTrainer' trainer.id %}"
+          class="SearchTrainer-delete-button"
+        >
+          Update
+        </a>
+      </div>
+      {% endfor %} {% else %}
+      <p class="SearchTrainer-no-results">No members found.</p>
+      <a class="SearchTrainer-no-results-link" href="{% url 'trainerList' %}"
+        >Add Another Trainer</a
+      >
+      {% endif %}
+    </div>
+  </body>
+</html>

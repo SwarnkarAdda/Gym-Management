@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/SearchMember.css' %}" />
+  </head>
+  <body>
+    {% include 'Navbar.html' %}
+    <div class="SearchMember-wrapper">
+      <h1>Search Result</h1>
+      {% if members %} {% for member in members %}
+      <div class="SearchMember-memberDetails">
+        <p>Member ID : {{ member.id }}</p>
+        <p>Name : {{ member.name }}</p>
+        <p>Age : {{ member.age }}</p>
+        <p>Gender : {{ member.gender }}</p>
+        <p>Email : {{ member.email }}</p>
+        <p>Phone : {{ member.phone }}</p>
+        <p>Address : {{ member.address }}</p>
+        <p>Joining Date : {{ member.joiningDate }}</p>
+        <p>Expiring Date : {{ member.expireingDate }}</p>
+        <p>Workout Time : {{ member.workoutTime }}</p>
+        <p>Plan : {{ member.plan }}</p>
+        <a
+          href="{% url 'deleteMember' member.id %}"
+          class="SearchMember-delete-button"
+          >Delete
+        </a>
+        <a
+          href="{% url 'updateMember' member.id %}"
+          class="SearchMember-delete-button"
+        >
+          Update
+        </a>
+      </div>
+      {% endfor %} {% else %}
+      <p class="SearchMember-no-results">No members found.</p>
+      <a class="SearchMember-no-results-link" href="{% url 'memberList' %}"
+        >Add Another Member</a
+      >
+      {% endif %}
+    </div>
+  </body>
+</html>

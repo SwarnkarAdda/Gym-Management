@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/UpdateTrainer.css' %}" />
+  </head>
+  <body>
+    {% include 'Navbar.html' %}
+    <div class="UpdateTrainer-wrapper">
+      <div class="UpdateTrainer-formContainer">
+        <h2>Update Trainer Detail</h2>
+        <form
+          action="{% url 'updateTrainer' trainer.id%}"
+          method="POST"
+          class="UpdateTrainer-form"
+        >
+          {% csrf_token %}
+          <input type="text" name="name" value="{{trainer.name}}" />
+          <input type="number" name="age" value="{{trainer.age}}" />
+          <input type="email" name="email" value="{{trainer.email}}" />
+          <input
+            type="tel"
+            name="phone"
+            maxlength="10"
+            pattern="[0-9]{10}"
+            value="{{trainer.phone}}"
+          />
+          <input type="text" name="address" value="{{trainer.address}}" />
+          <select name="specialty">
+            <option value="not select">Specialty</option>
+            <option value="Weight Training">Weight Training</option>
+            <option value="Cardio">Cardio</option>
+          </select>
+          <h5>Joining Date</h5>
+          <input
+            type="date"
+            name="joiningDate"
+            value="{{trainer.joiningDate}}"
+          />
+          <input
+            type="number"
+            name="salary"
+            value="{{trainer.salary}}"
+          />
+          <select name="shift">
+            <option value="not select">Shift Time</option>
+            <option value="Morning">Morning</option>
+            <option value="Evening">Evening</option>
+            <option value="Any">Any</option>
+          </select>
+          <button type="submit">Saved Details</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

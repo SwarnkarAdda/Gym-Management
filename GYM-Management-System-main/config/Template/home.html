@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {% include 'Navbar.html' %}
+    <div class="home-wrapper">
+      <div class="home-Container">
+        <h1>Welcome to Your Fitness Management Hub</h1>
+        <p>Stay Organized with Member Records, Plans, and Progress</p>
+        <p>Pick an Option Below to Start Managing Your Gym:</p>
+        <div class="home-buttonContainer">
+          <a href="{% url 'newMember' %}" class="home-btn">
+            <i class="fa-solid fa-file-circle-plus"></i><br />
+            New Member
+          </a>
+          <a href="{% url 'memberList' %}" class="home-btn">
+            <i class="fas fa-receipt"></i><br />
+            Member List
+          </a>
+          <a href="{% url 'newTrainer' %}" class="home-btn">
+            <i class="fa-solid fa-person-chalkboard"></i><br />
+            New Trainer
+          </a>
+          <a href="{% url 'trainerList' %}" class="home-btn">
+            <i class="fa-solid fa-list-ul"></i><br />
+            Trainer List
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

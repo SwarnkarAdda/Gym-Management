@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f4f7f9;
+}
+
+.SearchMember-wrapper {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.SearchMember-wrapper h1 {
+  text-align: center;
+  color: greenyellow;
+  font-weight: bold;
+}
+
+.SearchMember-memberDetails {
+  background-color: #ffffff;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.SearchMember-memberDetails p {
+  margin: 6px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.SearchMember-delete-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: #e74c3c;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.SearchMember-delete-button:hover {
+  background-color: #c0392b;
+}
+
+.SearchMember-no-results {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  color: red;
+  font-weight: bold;
+}
+
+.SearchMember-no-results-link {
+  margin-left: 395px;
+  margin-top: 20px;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: #27ae60;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.SearchMember-no-results-link:hover {
+  background-color: #219150;
+}

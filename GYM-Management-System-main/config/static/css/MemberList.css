@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f4f7f9;
+  margin: 0;
+  padding: 0;
+}
+
+.MemberList-wrapper {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.MemberList-searchForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.MemberList-searchForm select,
+.MemberList-searchForm input {
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1 1 30%;
+  min-width: 200px;
+}
+
+.MemberList-searchForm select {
+  max-width: 150px;
+}
+
+.MemberList-searchForm button {
+  max-width: 150px;
+  background-color: #2980b9;
+  color: white;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  flex: 1 1 30%;
+  transition: 0.3s;
+}
+
+.MemberList-searchForm button:hover {
+  background-color: #1f6392;
+}
+
+h2 {
+  margin-top: 20px;
+  font-size: 28px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.MemberList-memberDetails {
+  background-color: #ffffff;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.MemberList-memberDetails p {
+  margin: 6px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.MemberList-memberDetails strong {
+  color: #555;
+}
+
+.MemberList-delete-button {
+  display: inline-block;
+  padding: 8px 14px;
+  margin-top: 10px;
+  background-color: #e74c3c;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.MemberList-delete-button:hover {
+  background-color: #c0392b;
+}

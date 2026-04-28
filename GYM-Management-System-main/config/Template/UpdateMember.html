@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/UpdateMember.css' %}" />
+  </head>
+  <body>
+    {% include 'Navbar.html' %}
+    <div class="UpdateMember-wrapper">
+      <div class="UpdateMember-formContainer">
+        <h2>Update Member Detail</h2>
+        <form
+          action="{% url 'updateMember' member.id%}"
+          method="POST"
+          class="UpdateMember-form"
+        >
+          {% csrf_token %}
+          <input type="text" name="name" value="{{member.name}}" />
+          <input type="number" name="age" value="{{member.age}}" />
+          <input type="email" name="email" value="{{member.email}}" />
+          <input
+            type="tel"
+            name="phone"
+            maxlength="10"
+            pattern="[0-9]{10}"
+            value="{{member.phone}}"
+          />
+          <input type="text" name="address" value="{{member.address}}" />
+          <h5>Joining Date</h5>
+          <input
+            type="date"
+            name="joiningDate"
+            value="{{member.joiningDate}}"
+          />
+          <h5>Expireing Date</h5>
+          <input
+            type="date"
+            name="expireingDate"
+            value="{{member.expireingDate}}"
+          />
+          <select name="workoutTime">
+            <option value="not selected">Preferred Workout Time</option>
+            <option value="Morning">Morning</option>
+            <option value="Evening">Evening</option>
+            <option value="Any">Any</option>
+          </select>
+          <select name="plan">
+            <option value="not selected">Selected Plan</option>
+            <option value="1 Month">1 Month</option>
+            <option value="3 Months">3 Months</option>
+            <option value="6 Months">6 Months</option>
+            <option value="1 Year">1 Year</option>
+          </select>
+          <button type="submit">Saved Details</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

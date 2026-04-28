@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+}
+
+.about-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin: 40px auto;
+  padding: 40px;
+  width: 85%;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-left, .about-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-left h2 {
+  color: #e53935;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.about-left p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.about-right img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  max-height: 320px;
+  object-fit: cover;
+}
+
+/* Developer Section */
+.about-DevDetails {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 60px;
+}
+
+.about-Devbox p {
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+

@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/TrainerList.css' %}" />
+  </head>
+  <body>
+    {% include 'Navbar.html' %}
+    <div class="TrainerList-wrapper">
+      <form
+        action="{% url 'searchedTra' %}"
+        method="POST"
+        class="TrainerList-searchForm"
+      >
+        {% csrf_token %}
+
+        <select name="select" required>
+          <option value="">Select</option>
+          <option value="id">id</option>
+          <option value="email">Email</option>
+        </select>
+
+        <input type="search" name="search" placeholder="Search" required />
+
+        <button type="submit">Search</button>
+      </form>
+      <h2>Trainer List</h2>
+      {% for trainer in trainers %}
+      <div class="TrainerList-memberDetails">
+        <p>Trainer ID: {{ trainer.id }}</p>
+        <p>Name : {{ trainer.name }}</p>
+        <p>Age : {{ trainer.age }}</p>
+        <p>Gender : {{ trainer.gender }}</p>
+        <p>Email : {{ trainer.email }}</p>
+        <p>Phone : {{ trainer.phone }}</p>
+        <p>Address : {{ trainer.address }}</p>
+        <p>Experience : {{ trainer.experience }}</p>
+        <p>Specialty : {{ trainer.specialty }}</p>
+        <p>JoiningDate : {{ trainer.joiningDate }}</p>
+        <p>Salary : {{ trainer.salary }}</p>
+        <p>Shift : {{ trainer.shift }}</p>
+        <a
+          href="{% url 'deleteTrainer' trainer.id %}"
+          class="TrainerList-delete-button"
+        >
+          Delete
+        </a>
+        <a
+          href="{% url 'updateTrainer' trainer.id %}"
+          class="TrainerList-delete-button"
+        >
+          Update
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

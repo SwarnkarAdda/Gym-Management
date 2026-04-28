@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/MemberList.css' %}" />
+  </head>
+  <body>
+    {% include 'Navbar.html' %}
+    <div class="MemberList-wrapper">
+      <form
+        action="{% url 'searchedMem' %}"
+        method="POST"
+        class="MemberList-searchForm"
+      >
+        {% csrf_token %}
+
+        <select name="select" required>
+          <option value="">Select</option>
+          <option value="id">id</option>
+          <option value="email">Email</option>
+        </select>
+
+        <input type="search" name="search" placeholder="Search" required />
+
+        <button type="submit">Search</button>
+      </form>
+      <h2>Member List</h2>
+      {% for member in members %}
+      <div class="MemberList-memberDetails">
+        <p>Member ID : {{ member.id }}</p>
+        <p>Name : {{ member.name }}</p>
+        <p>Age : {{ member.age }}</p>
+        <p>Gender : {{ member.gender }}</p>
+        <p>Email : {{ member.email }}</p>
+        <p>Phone : {{ member.phone }}</p>
+        <p>Address : {{ member.address }}</p>
+        <p>Joining Date : {{ member.joiningDate }}</p>
+        <p>Expiring Date : {{ member.expireingDate }}</p>
+        <p>Workout Time : {{ member.workoutTime }}</p>
+        <p>Plan : {{ member.plan }}</p>
+        <a
+          href="{% url 'deleteMember' member.id %}"
+          class="MemberList-delete-button"
+        >
+          Delete
+        </a>
+        <a
+          href="{% url 'updateMember' member.id %}"
+          class="MemberList-delete-button"
+        >
+          Update
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
